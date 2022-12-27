@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AviaMirror</string>
+    <string name="prompt_email">Enter phone or email</string>
+    <string name="prompt_password">Enter password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="choose_flight">Choose Flight</string>
+    <string name="find">Find</string>
+    <string name="you_may_also_like">Maybe you search for this</string>
+</resources>

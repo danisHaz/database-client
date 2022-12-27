@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/fragment_main_padding">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/choose_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/choose_flight"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/plane_date_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Choose date to take flight"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/plane_date_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choose_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/plane_date_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Choose date to arrive to"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/plane_date_from"
+            app:layout_constraintTop_toBottomOf="@id/choose_text" />
+
+        <CalendarView
+            android:id="@+id/calendar_from"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:selectedWeekBackgroundColor="#ff0000"
+            android:weekNumberColor="#0000ff"
+            android:weekSeparatorLineColor="#00ff00"
+            app:layout_constraintEnd_toStartOf="@id/calendar_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/plane_date_from" />
+
+        <CalendarView
+            android:id="@+id/calendar_to"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:selectedWeekBackgroundColor="#ff0000"
+            android:weekNumberColor="#0000ff"
+            android:weekSeparatorLineColor="#00ff00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/calendar_from"
+            app:layout_constraintTop_toBottomOf="@id/plane_date_to" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/plane_city_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Choose city to take off from"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/plane_city_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendar_from" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/plane_city_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Choose city to arrive"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/plane_city_from"
+            app:layout_constraintTop_toBottomOf="@id/calendar_to" />
+
+        <Spinner
+            android:id="@+id/spinner_city_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/spinner_city_to"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/plane_city_from" />
+
+        <Spinner
+            android:id="@+id/spinner_city_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/purple_200"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spinner_city_from"
+            app:layout_constraintTop_toBottomOf="@id/plane_city_to" />
+
+        <Button
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/find"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinner_city_to" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/filter"
+            app:layout_constraintEnd_toEndOf="@id/filter"
+            app:layout_constraintStart_toStartOf="@id/filter"
+            app:layout_constraintTop_toTopOf="@id/filter" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/alsoLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/you_may_also_like"
+            android:textColor="@color/purple_200"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filter" />
+
+        <LinearLayout
+            android:id="@+id/popularTakeoffsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/alsoLike" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

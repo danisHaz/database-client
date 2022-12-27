@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/purple_700" />
+    <padding android:bottom="@dimen/takeoff_view_background_padding"
+        android:left="@dimen/takeoff_view_background_padding"
+        android:right="@dimen/takeoff_view_background_padding"
+        android:top="@dimen/takeoff_view_background_padding" />
+    <corners android:radius="@dimen/takeoff_view_background_cornerradius" />
+</shape>
